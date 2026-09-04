@@ -1,0 +1,7 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"; import InnerHero from "../components/InnerHero.astro"; import { paths } from "../config/site";
+---
+<BaseLayout title="Qué es la PNI | Psiconeuroinmunología Clínica" description="Una explicación prudente y clara de qué es la Psiconeuroinmunología Clínica, qué información integra y qué no implica." canonicalPath={paths.pni}>
+  <InnerHero eyebrow="Conceptos claros" title="¿Qué es la PNI?" lead="Una forma de ampliar la información que se considera en una valoración clínica." />
+  <section class="section"><div class="container reading"><h2>Psiconeuroinmunología Clínica</h2><p>La Psiconeuroinmunología, conocida habitualmente como PNI, estudia las relaciones entre diferentes sistemas del organismo y cómo pueden verse influidos por factores como el descanso, la alimentación, la actividad física, el estrés o el entorno.</p><p>En la práctica clínica, esta perspectiva puede ayudar a contextualizar la situación de una persona y a integrar información relevante dentro de una valoración individual.</p><h2>Qué no significa</h2><ul><li>No implica que todos los problemas tengan una única causa.</li><li>No sustituye automáticamente tratamientos o seguimientos médicos.</li><li>No justifica solicitar pruebas indiscriminadamente.</li><li>No ofrece una intervención universal válida para todas las personas.</li></ul><p>Cada caso necesita una valoración propia que determine qué información y qué actuaciones tienen sentido.</p><a class="button" href={paths.pniBilbao}>PNI en Bilbao</a></div></section>
+</BaseLayout>

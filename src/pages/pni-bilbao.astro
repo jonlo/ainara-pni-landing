@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Credentials from "../components/Credentials.astro";
+import { paths } from "../config/site";
+const title = "PNI en Bilbao | Medicina y Psiconeuroinmunología Clínica | Dra. Ainara";
+const description = "Consulta de Psiconeuroinmunología Clínica en Bilbao con la Dra. Ainara, médico con años de experiencia y Máster de tres años en PNI. Conoce cómo trabaja y consulta disponibilidad.";
+---
+<BaseLayout {title} {description} canonicalPath={paths.pniBilbao}>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Consulta médica · Bilbao</p>
+        <h1>Medicina PNI<br />en Bilbao</h1>
+        <p class="hero-lead">Psiconeuroinmunología Clínica desde una perspectiva médica</p>
+        <p class="hero-body">La Dra. Ainara es médico con años de experiencia profesional y formación avanzada en Psiconeuroinmunología Clínica.</p>
+        <Credentials />
+        <div class="button-row"><button class="button js-booking-open" type="button">Ver disponibilidad</button><a class="text-link" href="#como-es-la-consulta">Cómo es la consulta <span aria-hidden="true">↓</span></a></div>
+        <p class="location-note"><span aria-hidden="true">●</span> Consulta presencial en Bilbao</p>
+      </div>
+      <div class="portrait-placeholder" role="img" aria-label="Espacio reservado para una fotografía real de la Dra. Ainara">
+        <span class="portrait-monogram">A</span><p>Fotografía de la<br />Dra. Ainara</p>
+      </div>
+    </div>
+  </section>
+  <section class="trust-strip" aria-label="Principales señales de confianza">
+    <div class="container trust-grid">
+      <article><span>01</span><h2>Médico</h2><p>Consulta realizada por una profesional titulada en Medicina.</p></article>
+      <article><span>02</span><h2>Formación en PNI Clínica</h2><p>Máster de tres años en Psiconeuroinmunología Clínica.</p></article>
+      <article><span>03</span><h2>Consulta en Bilbao</h2><p>Atención presencial y personalizada.</p></article>
+    </div>
+  </section>
+  <section class="section"><div class="container split-section"><div><p class="eyebrow">Un criterio amplio y prudente</p><h2>PNI con formación médica</h2></div><div><p class="large-copy">Un enfoque global sin renunciar al rigor y al criterio médico.</p><p>La Psiconeuroinmunología Clínica propone observar la salud teniendo en cuenta la interacción entre diferentes sistemas del organismo y determinados factores del estilo de vida.</p><p>En la consulta de la Dra. Ainara, este enfoque parte además de una formación médica y de una valoración individual. El objetivo no es sustituir la medicina convencional ni buscar explicaciones simples para problemas complejos.</p></div></div></section>
+  <section class="section section-tint"><div class="container split-section"><div><p class="eyebrow">Una mirada integradora</p><h2>¿Qué es la Psiconeuroinmunología Clínica?</h2></div><div><p>La PNI estudia las relaciones entre distintos sistemas del organismo y cómo pueden verse influidos por factores como el descanso, la alimentación, la actividad física, el estrés o el entorno.</p><p>En la práctica clínica, esta perspectiva puede ampliar la información que se tiene en cuenta al valorar una situación. No significa que todos los síntomas tengan una única causa ni que exista una intervención válida para todo el mundo.</p><a class="arrow-link" href={paths.pni}>Leer más sobre qué es la PNI <span aria-hidden="true">→</span></a></div></div></section>
+  <section class="section" id="como-es-la-consulta"><div class="container"><p class="eyebrow">Paso a paso</p><h2>¿Cómo es una consulta de PNI?</h2><p class="section-intro">La primera consulta busca comprender el contexto completo de la persona y disponer de suficiente información para realizar una valoración individualizada. El proceso exacto dependerá de cada caso.</p><ol class="process-grid"><li><h3>Historia clínica y contexto</h3><p>Revisión de antecedentes, síntomas, evolución y situación actual.</p></li><li><h3>Valoración médica</h3><p>Análisis de la información disponible desde una perspectiva clínica.</p></li><li><h3>Hábitos y estilo de vida</h3><p>Cuando resulte relevante, revisión de alimentación, descanso, actividad física y estrés.</p></li><li><h3>Pruebas y documentación</h3><p>Revisión de informes o analíticas previas cuando aporten información útil.</p></li><li><h3>Plan individualizado</h3><p>Definición de siguientes pasos y recomendaciones apropiadas.</p></li><li><h3>Seguimiento</h3><p>Revisión de la evolución y adaptación del plan cuando proceda.</p></li></ol></div></section>
+  <section class="doctor-section"><div class="container doctor-grid"><div class="doctor-placeholder" aria-hidden="true"><span>A</span></div><div><p class="eyebrow">Tu médico</p><h2>Dra. Ainara</h2><p class="large-copy">Médico · Formación en PNI Clínica</p><p>Ainara es médico y cuenta con años de experiencia profesional. Además de su formación médica, ha realizado un Máster de tres años en Psiconeuroinmunología Clínica.</p><p>Su forma de trabajar combina una valoración médica individualizada con una perspectiva amplia sobre aquellos factores que pueden resultar relevantes en la salud de cada paciente.</p><a class="arrow-link" href={paths.doctor}>Conoce a la Dra. Ainara <span aria-hidden="true">→</span></a></div></div></section>
+  <section class="section"><div class="container statement"><p class="eyebrow">Prudencia clínica</p><h2>Cada persona necesita una valoración propia</h2><p>Los síntomas pueden tener múltiples causas y contextos. Por eso una consulta médica no debería comenzar con una conclusión predeterminada ni con la promesa de encontrar una única “causa raíz”.</p><p>La valoración debe realizarse caso por caso y determinar qué información, pruebas, recomendaciones o derivaciones tienen sentido en cada situación.</p></div></section>
+  <section class="location-section"><div class="container location-grid"><div><p class="eyebrow">Cerca de ti</p><h2>Consulta presencial en Bilbao</h2><p>Atención presencial y personalizada. Los datos concretos del centro se publicarán cuando estén confirmados.</p><a class="arrow-link" href={paths.consultation}>Información de la consulta <span aria-hidden="true">→</span></a></div><div class="bilbao-mark" aria-hidden="true">BILBAO<span>43.26° N · 2.93° W</span></div></div></section>
+  <section class="section"><div class="container faq"><p class="eyebrow">Preguntas frecuentes</p><h2>Antes de tu consulta</h2><div class="faq-list"><details><summary>¿La consulta la realiza un médico?</summary><p>Sí. La consulta es realizada por la Dra. Ainara, médico con años de experiencia profesional y Máster de tres años en Psiconeuroinmunología Clínica.</p></details><details><summary>¿Qué es la PNI Clínica?</summary><p>Es una perspectiva clínica que estudia las relaciones entre distintos sistemas del organismo y factores del estilo de vida. Se aplica de manera individualizada, sin sustituir automáticamente otros tratamientos.</p></details><details><summary>¿Qué ocurre en la primera consulta?</summary><p>Se revisan la historia clínica, el contexto y la información disponible para realizar una valoración individual y plantear los siguientes pasos apropiados.</p></details><details><summary>¿Tengo que llevar analíticas?</summary><p>Si dispones de informes o analíticas recientes pueden resultar útiles. No es necesario realizar pruebas específicamente antes de acudir salvo que se indique expresamente.</p></details><details><summary>¿Dónde está la consulta?</summary><p>La consulta es presencial en Bilbao. La dirección se publicará cuando esté confirmada.</p></details></div></div></section>
+  <section class="final-cta"><div class="container"><p class="eyebrow">Primer paso</p><h2>Pide tu primera consulta</h2><p>Consulta la disponibilidad y elige el horario que mejor te venga.</p><button class="button button-light js-booking-open" type="button">Ver disponibilidad</button><small>Consulta médica presencial en Bilbao</small></div></section>
+</BaseLayout>

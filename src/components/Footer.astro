@@ -1,0 +1,10 @@
+---
+import { paths, site } from "../config/site";
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><strong>{site.name}</strong><p>Medicina y Psiconeuroinmunología Clínica en Bilbao.</p></div>
+    <nav aria-label="Navegación del pie"><a href={paths.pniBilbao}>PNI en Bilbao</a><a href={paths.pni}>Qué es la PNI</a><a href={paths.consultation}>Consulta</a></nav>
+  </div>
+  <div class="container footer-bottom"><span>© {new Date().getFullYear()} {site.name}</span><span>Información sanitaria general. No sustituye una valoración médica.</span></div>
+</footer>

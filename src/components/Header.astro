@@ -1,0 +1,14 @@
+---
+import { paths, site } from "../config/site";
+---
+<header class="site-header">
+  <div class="container nav-shell">
+    <a class="brand" href={paths.home} aria-label={`${site.name}, inicio`}>
+      <span>{site.doctor.firstName}</span><small>Medicina · PNI</small>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href={paths.pniBilbao}>PNI</a><a href={paths.doctor}>Dra. Ainara</a><a href={paths.consultation}>La consulta</a><a href={paths.resources}>Recursos</a>
+    </nav>
+    <button class="button button-small js-booking-open" type="button">Ver disponibilidad</button>
+  </div>
+</header>

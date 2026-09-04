@@ -1,0 +1,8 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"; import InnerHero from "../components/InnerHero.astro"; import { paths } from "../config/site";
+---
+<BaseLayout title="Consulta PNI en Bilbao | Dra. Ainara" description="Conoce cómo se desarrolla una consulta de PNI en Bilbao con la Dra. Ainara y consulta la disponibilidad de demostración." canonicalPath={paths.consultation}>
+  <InnerHero eyebrow="Consulta presencial · Bilbao" title="La consulta" lead="Tiempo para comprender tu contexto y realizar una valoración individualizada." />
+  <section class="section"><div class="container process-feature"><div><span>01</span><h2>Primera consulta</h2><p>La primera visita comienza con la historia clínica, los antecedentes y la evolución. Se revisa la información disponible y, cuando es relevante, aspectos del estilo de vida.</p></div><div><span>02</span><h2>Valoración</h2><p>La información se analiza desde una perspectiva clínica. Las pruebas o informes previos se revisan si aportan información útil, sin solicitar estudios de forma indiscriminada.</p></div><div><span>03</span><h2>Siguientes pasos</h2><p>Se plantea un plan individualizado y el seguimiento que pueda resultar apropiado. También se consideran derivaciones cuando proceda.</p></div></div></section>
+  <section class="final-cta"><div class="container"><p class="eyebrow">Disponibilidad demo</p><h2>Consulta presencial en Bilbao</h2><p>La dirección, duración y precio se añadirán cuando estén confirmados.</p><button class="button button-light js-booking-open" type="button">Ver disponibilidad</button></div></section>
+</BaseLayout>

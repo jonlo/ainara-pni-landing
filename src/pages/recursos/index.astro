@@ -1,0 +1,7 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"; import InnerHero from "../../components/InnerHero.astro"; import { paths } from "../../config/site";
+---
+<BaseLayout title="Recursos sobre PNI Clínica | Dra. Ainara" description="Próximamente, recursos revisados sobre Psiconeuroinmunología Clínica y el proceso de consulta." canonicalPath={paths.resources}>
+  <InnerHero eyebrow="Información con criterio" title="Recursos" lead="Un espacio para contenidos claros, prudentes y revisados antes de su publicación." />
+  <section class="section"><div class="container empty-state"><p class="eyebrow">Próximamente</p><h2>Contenido en preparación</h2><p>Los recursos médicos seguirán un proceso de redacción, revisión humana y revisión médica antes de publicarse.</p><a class="arrow-link" href={paths.pni}>Mientras tanto: qué es la PNI →</a></div></section>
+</BaseLayout>

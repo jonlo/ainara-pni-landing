@@ -1,0 +1,39 @@
+<dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
+  <div class="booking-head">
+    <div><p class="eyebrow">Disponibilidad</p><h2 id="booking-title">Reserva tu consulta</h2></div>
+    <button class="icon-button js-booking-close" type="button" aria-label="Cerrar reserva">×</button>
+  </div>
+  <div class="demo-notice" role="status"><strong>Demostración</strong> Disponibilidad ficticia. No se realizará ninguna reserva real.</div>
+  <form class="booking-form">
+    <fieldset><legend>Primera consulta PNI</legend><p class="field-help">Elige una fecha de muestra</p>
+      <div class="date-options">
+        <label><input type="radio" name="date" value="martes-15" checked /><span><small>MAR</small><strong>15</strong><em>Sep</em></span></label>
+        <label><input type="radio" name="date" value="miercoles-16" /><span><small>MIÉ</small><strong>16</strong><em>Sep</em></span></label>
+        <label><input type="radio" name="date" value="viernes-18" /><span><small>VIE</small><strong>18</strong><em>Sep</em></span></label>
+      </div>
+    </fieldset>
+    <fieldset><legend>Horarios disponibles</legend><div class="slot-options">
+      {['09:30','11:00','16:30','18:00'].map((time) => <label><input type="radio" name="time" value={time} /><span>{time}</span></label>)}
+    </div></fieldset>
+    <button class="button booking-continue" type="submit" disabled>Continuar</button>
+  </form>
+  <div class="booking-result" hidden><p class="eyebrow">Vista previa completada</p><h3>Así funcionará la reserva</h3><p>Esta es una demostración del proceso. No se ha creado ninguna cita ni se han guardado datos.</p><button class="button js-booking-close" type="button">Volver a la web</button></div>
+</dialog>
+<button class="mobile-booking js-booking-open" type="button">Ver disponibilidad</button>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('#booking-dialog');
+  const form = dialog?.querySelector<HTMLFormElement>('.booking-form');
+  const submit = dialog?.querySelector<HTMLButtonElement>('.booking-continue');
+  const result = dialog?.querySelector<HTMLElement>('.booking-result');
+  const track = (event: string, detail = {}) => document.dispatchEvent(new CustomEvent('ainara:analytics', { detail: { event, ...detail } }));
+  document.querySelectorAll<HTMLButtonElement>('.js-booking-open').forEach((button) => button.addEventListener('click', () => {
+    track('booking_cta_click', { label: button.textContent?.trim() }); dialog?.showModal(); track('booking_open');
+  }));
+  document.querySelectorAll<HTMLButtonElement>('.js-booking-close').forEach((button) => button.addEventListener('click', () => dialog?.close()));
+  dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  form?.addEventListener('change', () => { const selected = new FormData(form).get('time'); if (submit) submit.disabled = !selected; if (selected) track('booking_slot_selected', { time: selected }); });
+  form?.addEventListener('submit', (event) => { event.preventDefault(); track('booking_continue'); form.hidden = true; if (result) result.hidden = false; });
+  dialog?.addEventListener('close', () => { form?.reset(); if (form) form.hidden = false; if (result) result.hidden = true; if (submit) submit.disabled = true; });
+  const hero = document.querySelector('.hero'); const mobileButton = document.querySelector('.mobile-booking');
+  if (hero && mobileButton) new IntersectionObserver(([entry]) => mobileButton.classList.toggle('is-visible', !entry.isIntersecting), { threshold: 0 }).observe(hero);
+</script>
