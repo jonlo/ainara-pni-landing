@@ -10,9 +10,8 @@ export const site = {
     profession: "Médico",
     experience: { years: null, label: "Años de experiencia profesional", summary: null },
     pniEducation: {
-      type: "Máster",
+      type: "Formación avanzada",
       title: "Psiconeuroinmunología Clínica",
-      durationYears: 3,
       institution: null,
     },
     registration: { number: null, college: null },

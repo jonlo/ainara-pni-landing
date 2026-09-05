@@ -34,7 +34,7 @@ npm run preview
 
 ## Datos profesionales pendientes
 
-La fuente única de los datos es `src/config/site.ts`. Allí se podrán completar apellido, experiencia exacta, institución del Máster, colegiación, centro, dirección, contacto, duración, precio, modalidad online, enlaces sociales, textos legales y analítica.
+La fuente única de los datos es `src/config/site.ts`. Allí se podrán completar apellido, experiencia exacta, institución de la formación en PNI, colegiación, centro, dirección, contacto, duración, precio, modalidad online, enlaces sociales, textos legales y analítica.
 
 Los valores pendientes permanecen en `null` y no deben renderizarse hasta estar confirmados. Antes de publicar se deben validar las credenciales y los requisitos aplicables a publicidad sanitaria en Euskadi.
 
