@@ -68,3 +68,18 @@ body{letter-spacing:-.005em;background:var(--paper)}
 .section .process-feature h2{font-size:clamp(24px,2.2vw,30px);line-height:1.2;letter-spacing:-.035em;white-space:nowrap;margin:10px 0 22px}
 .process-feature p{margin:0;max-width:34ch}
 @media(max-width:900px){.process-feature{grid-template-columns:1fr}.process-feature>div,.process-feature>div:first-child{padding:28px}.section .process-feature h2{white-space:normal;margin-bottom:12px}.process-feature p{max-width:60ch}}
+
+/* Hero fotográfico con contraste estable sobre cualquier zona de la imagen. */
+.hero-photo{position:relative;isolation:isolate;min-height:720px;display:flex;align-items:center;background-image:var(--hero-image);background-size:cover;background-position:center 48%;color:#fff}
+.hero-photo:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(10,37,43,.62),rgba(10,37,43,.7)),linear-gradient(90deg,rgba(14,54,60,.38),rgba(14,54,60,.16))}
+.hero-photo:after{content:"";position:absolute;z-index:-1;inset:8% 10%;border:1px solid rgba(255,255,255,.2);pointer-events:none}
+.hero-photo .eyebrow{color:#c9ece8}
+.hero-photo .hero-lead{color:#fff;text-shadow:0 2px 22px rgba(0,0,0,.25)}
+.hero-photo .hero-body{color:rgba(255,255,255,.88)}
+.hero-photo .credentials{padding:0 24px;background:rgba(12,48,53,.52);border:1px solid rgba(255,255,255,.26);backdrop-filter:blur(10px);border-radius:10px}
+.hero-photo .credentials>div+div{border-color:rgba(255,255,255,.22)}
+.hero-photo .credentials strong{color:#fff}.hero-photo .credentials span{color:rgba(255,255,255,.75)}
+.hero-photo .button{background:#fff;border-color:#fff;color:var(--ink)}.hero-photo .button:hover{background:var(--mint);border-color:var(--mint)}
+.hero-photo .text-link{color:#fff;border-color:rgba(255,255,255,.7)}
+.hero-photo .location-note{color:rgba(255,255,255,.82)}.hero-photo .location-note span{color:#9edbd5}
+@media(max-width:800px){.hero-photo{min-height:680px;background-position:64% center}.hero-photo:before{background:rgba(10,37,43,.72)}.hero-photo:after{inset:18px}.hero-photo .credentials{padding:0 14px}.hero-photo .button-row{gap:20px}}
