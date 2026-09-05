@@ -31,7 +31,7 @@ export const site = {
   analytics: { enabled: false },
 } as const;
 
-const base = import.meta.env.BASE_URL;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
 const route = (path = "") => `${base}${path}`.replace(/\/+/g, "/");
 
 export const paths = {
