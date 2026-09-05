@@ -1,4 +1,16 @@
 ---
 const doctorPath = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/dra-ainara/`;
-return Astro.redirect(doctorPath);
 ---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0;url=${doctorPath}`} />
+    <link rel="canonical" href={new URL(doctorPath, Astro.site)} />
+    <title>Dra. Ainara</title>
+  </head>
+  <body>
+    <p>Accediendo al perfil de la <a href={doctorPath}>Dra. Ainara</a>…</p>
+  </body>
+</html>
