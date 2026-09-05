@@ -1,9 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Credentials from "../components/Credentials.astro";
-import { paths, site } from "../config/site";
+import { paths } from "../config/site";
+
+return Astro.redirect(paths.doctor);
 ---
-<BaseLayout canonicalPath={paths.home}>
-  <section class="home-hero"><div class="container"><p class="eyebrow">Medicina · PNI · Bilbao</p><h1>{site.doctor.displayName}</h1><p>Medicina y Psiconeuroinmunología Clínica en Bilbao</p><Credentials /><div class="button-row"><a class="button" href={paths.pniBilbao}>Conocer el enfoque</a><button class="text-button js-booking-open" type="button">Ver disponibilidad →</button></div></div></section>
-  <section class="section section-tint"><div class="container split-section"><div><p class="eyebrow">Una perspectiva médica</p><h2>Mirar la salud de forma amplia</h2></div><div><p class="large-copy">Una valoración individualizada, con criterio clínico y sin promesas simples.</p><p>La consulta integra la información médica disponible con aquellos aspectos del estilo de vida que pueden resultar relevantes para cada persona.</p><a class="arrow-link" href={paths.pniBilbao}>PNI en Bilbao →</a></div></div></section>
-</BaseLayout>
