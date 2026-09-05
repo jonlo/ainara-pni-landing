@@ -8,7 +8,8 @@ import { site } from "../config/site";
 interface Props { title?: string; description?: string; canonicalPath?: string; }
 const { title = site.defaultTitle, description = site.defaultDescription, canonicalPath = Astro.url.pathname } = Astro.props;
 const canonical = Astro.site ? new URL(canonicalPath, Astro.site) : undefined;
-const socialImage = Astro.site ? new URL(`${import.meta.env.BASE_URL}og.png`, Astro.site) : undefined;
+const assetBase = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
+const socialImage = Astro.site ? new URL(`${assetBase}og.png`, Astro.site) : undefined;
 ---
 <!doctype html>
 <html lang="es">
@@ -16,7 +17,7 @@ const socialImage = Astro.site ? new URL(`${import.meta.env.BASE_URL}og.png`, As
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f4f1eb" />
+    <meta name="theme-color" content="#28737a" />
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
