@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import InnerHero from "../../components/InnerHero.astro";
+import { consultationAreas } from "../../config/areas";
+import { paths } from "../../config/site";
+export function getStaticPaths() { return consultationAreas.map(area => ({ params: { slug: area.slug }, props: { area } })); }
+const { area } = Astro.props;
+---
+<BaseLayout title={`${area.title} en Bilbao | Dra. Ainara`} description={area.summary} canonicalPath={`${paths.home}areas/${area.slug}/`}>
+  <InnerHero eyebrow="Consulta con Ainara · Bilbao" title={area.title} lead={area.summary} />
+  <section class="section"><div class="container split-section"><div><h2>Cuándo consultar</h2></div><div><ul>{area.situations.map(situation => <li>{situation}</li>)}</ul></div></div></section>
+  <section class="section section-tint"><div class="container split-section"><div><h2>Cómo lo aborda Ainara</h2></div><div><p>{area.approach}</p><a class="arrow-link" href={paths.doctor}>Conoce a Ainara →</a></div></div></section>
+  <section class="section"><div class="container"><h2>Tu primera visita</h2><p>Revisaremos tu historia, la evolución y los informes que ya tengas para valorar los siguientes pasos.</p><a class="arrow-link" href={paths.consultation}>Cómo preparar la consulta →</a></div></section>
+  {area.questions.length > 0 && <section class="section"><div class="container faq"><h2>Preguntas frecuentes</h2><div class="faq-list">{area.questions.map(item => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</div></div></section>}
+  <section class="final-cta"><div class="container"><h2>Consulta con Ainara en Bilbao</h2><button class="button button-light js-booking-open" type="button">Ver disponibilidad</button></div></section>
+</BaseLayout>

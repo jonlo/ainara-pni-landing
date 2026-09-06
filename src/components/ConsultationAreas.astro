@@ -1,0 +1,9 @@
+---
+import { consultationAreas } from "../config/areas";
+import { paths } from "../config/site";
+---
+<section class="section section-tint" id="motivos-de-consulta"><div class="container">
+  <p class="eyebrow">Tu motivo de consulta</p>
+  <h2>Empecemos por lo que te preocupa</h2>
+  {consultationAreas.length > 0 ? <><p class="section-intro">Conoce las áreas de consulta de Ainara y cómo se plantea la valoración en cada caso.</p><div class="area-grid">{consultationAreas.map((area, index) => <article><span class="eyebrow">0{index + 1}</span><h3>{area.title}</h3><p>{area.summary}</p><a class="arrow-link" href={`${paths.home}areas/${area.slug}/`}>Conocer la consulta <span aria-hidden="true">→</span></a></article>)}</div></> : <div class="area-intro"><p class="large-copy">Qué te ocurre, desde cuándo y cómo afecta a tu día a día.</p><p>La primera visita es un espacio para explicar tu situación, revisar tu historia y valorar los siguientes pasos con Ainara.</p><a class="arrow-link" href={paths.consultation}>Qué esperar de la primera visita <span aria-hidden="true">→</span></a></div>}
+</div></section>

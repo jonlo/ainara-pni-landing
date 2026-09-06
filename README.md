@@ -49,3 +49,11 @@ Las interacciones del booking emiten eventos `ainara:analytics` en el documento 
 ## GitHub Pages
 
 Astro genera HTML estático y el repositorio está configurado para publicarse automáticamente en GitHub Pages después de cada cambio enviado a `main`. `site` y `base` están definidos en `astro.config.mjs` para que enlaces, canónicas e imagen Open Graph funcionen bajo la ruta del repositorio.
+
+## Revisión tras el audio del cliente
+
+La portada `/` ya no redirige al perfil. Presenta el motivo de consulta, el proceso y a Ainara.
+
+Las tres áreas están pendientes de confirmación: no se ha dado por confirmado SIBO ni se han inventado las otras dos. Añadir los contenidos aprobados a `src/config/areas.ts` (slug, title, summary, situations, approach y questions). La portada y `/pni-bilbao/` muestran automáticamente las tarjetas y Astro genera `/areas/<slug>/` para cada campaña. Con la lista vacía, se muestra una introducción a la primera consulta y no se generan páginas de áreas.
+
+Completar trayectoria e institución en `src/config/site.ts`: el perfil oculta datos ausentes. Falta recibir una fotografía real; no se ha utilizado un retrato inventado. La reserva sigue siendo una demostración.

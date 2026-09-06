@@ -1,16 +1,21 @@
 ---
-const doctorPath = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/dra-ainara/`;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ConsultationAreas from "../components/ConsultationAreas.astro";
+import { paths } from "../config/site";
+const heroImage = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/images/bilbao-hero.webp`;
 ---
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="robots" content="noindex" />
-    <meta http-equiv="refresh" content={`0;url=${doctorPath}`} />
-    <link rel="canonical" href={new URL(doctorPath, Astro.site)} />
-    <title>Dra. Ainara</title>
-  </head>
-  <body>
-    <p>Accediendo al perfil de la <a href={doctorPath}>Dra. Ainara</a>…</p>
-  </body>
-</html>
+<BaseLayout title="Dra. Ainara | Consulta de Medicina y PNI en Bilbao" description="Conoce a Ainara y cómo es su consulta de Medicina y PNI Clínica en Bilbao. Un espacio para explicar qué te preocupa y valorar los siguientes pasos." canonicalPath={paths.home}>
+  <section class="hero hero-photo home-hero" style={`--hero-image: url("${heroImage}")`}><div class="container"><div class="home-copy">
+    <p class="eyebrow">Dra. Ainara · Medicina y PNI · Bilbao</p>
+    <h1>Tiempo para escucharte.<br />Una mirada a tu salud.</h1>
+    <p class="hero-lead">Una consulta que empieza por ti.</p>
+    <p class="hero-body">Con Ainara, médico con formación en Psiconeuroinmunología Clínica, podrás compartir lo que te preocupa y revisar tu situación en una consulta individual.</p>
+    <div class="button-row"><a class="button" href="#motivos-de-consulta">Conocer la consulta</a><button class="text-link js-booking-open" type="button">Ver disponibilidad</button></div>
+    <p class="location-note">Consulta presencial en Bilbao</p>
+  </div></div></section>
+  <ConsultationAreas />
+  <section class="section"><div class="container"><p class="eyebrow">Cómo trabajaremos</p><h2>Del primer encuentro<br />a los siguientes pasos</h2><div class="process-feature"><div><span>01</span><h3>Escuchar tu historia</h3><p>Qué te trae a consulta, cómo ha evolucionado y qué necesitas compartir.</p></div><div><span>02</span><h3>Revisar el conjunto</h3><p>Antecedentes, informes y hábitos que puedan ser relevantes para tu situación.</p></div><div><span>03</span><h3>Decidir cómo continuar</h3><p>Una explicación de la valoración y de los siguientes pasos, con seguimiento cuando proceda.</p></div></div><a class="arrow-link section-link" href={paths.consultation}>Así es la primera visita <span aria-hidden="true">→</span></a></div></section>
+  <section class="section section-tint"><div class="container split-section"><div><p class="eyebrow">Conoce a tu médico</p><h2>Ainara</h2><p class="large-copy">Medicina y formación en PNI Clínica.</p></div><div><p>En su consulta, Ainara parte de la historia de cada persona. Además de la información clínica, tiene en cuenta el descanso, la alimentación, el movimiento y el contexto cotidiano cuando resultan relevantes.</p><a class="arrow-link" href={paths.doctor}>Conoce su forma de trabajar <span aria-hidden="true">→</span></a></div></div></section>
+  <section class="section"><div class="container split-section"><div><p class="eyebrow">El enfoque</p><h2>¿Y qué papel tiene la PNI?</h2></div><div><p>La Psiconeuroinmunología es parte de la formación de Ainara. Puedes conocer este enfoque y cómo se incorpora a la consulta antes de dar el primer paso.</p><a class="arrow-link" href={paths.pni}>Entender la PNI <span aria-hidden="true">→</span></a></div></div></section>
+  <section class="final-cta"><div class="container"><p class="eyebrow">Tu primera visita</p><h2>Un espacio para hablar<br />de lo que te preocupa</h2><p>Consulta presencial con la Dra. Ainara en Bilbao.</p><button class="button button-light js-booking-open" type="button">Ver disponibilidad</button></div></section>
+</BaseLayout>
